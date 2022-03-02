@@ -82,9 +82,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                Welcome to Transaction App
+                Welcome to TO-DO LIST App
                 </div>
-
+                <div class="links">
+                <a href="{{ url('todolist') }}">Click Here For List Of TODO</a>
+                </div>
                 {{--<div class="links">--}}
                     {{--<a href="https://laravel.com/docs">Docs</a>--}}
                     {{--<a href="https://laracasts.com">Laracasts</a>--}}

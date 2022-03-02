@@ -11,24 +11,14 @@
 |
 */
 
+use App\Http\Controllers\TodoListController;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth', 'role:user']], function (){
-
-    Route::get('partial-view', 'TransactionController@loadMorePartialView');
-    Route::resource('transactions', 'TransactionController');
-});
-
-Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admin'], function (){
-
-
-    Route::get('transactions', 'TransactionController@adminIndex');
-    Route::get('edit-transaction/{id}','TransactionController@adminEdit');
-    Route::put('update-transaction/{id}', 'TransactionController@adminUpdate');
-});
+Route::get('todolist', [TodoListController::class, 'index']);
+Route::get('todolist/create', [TodoListController::class, 'create']);
+Route::post('todolist/store', [TodoListController::class, 'store']);
+Route::get('todolist/delete/{todoList}', [TodoListController::class, 'destroy']);

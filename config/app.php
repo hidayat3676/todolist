@@ -1,5 +1,8 @@
 <?php
 
+use hidayat\restclient\RestClientServiceProvider;
+use Yajra\DataTables\DataTablesServiceProvider;
+
 return [
 
     /*
@@ -174,6 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        RestClientServiceProvider::class,
+        DataTablesServiceProvider::class,
 
     ],
 

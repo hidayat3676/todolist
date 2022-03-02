@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head><title>{{ isset($title) ? $title:  'Transaction App'}} </title>
+<head><title>{{ isset($title) ? $title:  'Laravel Test App'}} </title>
     <style>
         body{
-            background-color: darkseagreen;
-            background: linear-gradient(#d9f5e6, #9bdef5);
+            background-color: whitesmoke;
+            background: linear-gradient(whitesmoke, whitesmoke);
             height: 100vh;
         }
     </style>
 <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+    <!-- Theme style -->
+{{--    <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">--}}
+    @stack('head')
 </head>
 <body>
 <div class="container">
